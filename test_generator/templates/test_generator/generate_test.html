@@ -1,0 +1,21 @@
+<!-- test_generator/generate_test.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Case Generator</title>
+</head>
+<body>
+    <h2>Generate Test Cases</h2>
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Generate Test Cases</button>
+    </form>
+    <h3>Generated Test Cases:</h3>
+    <pre>{{ test.generated_test }}</pre>
+    {% if test.generated_test %}
+        <h3>Generated Test Cases:</h3>
+        <pre>{{ test.generated_test }}</pre>
+    {% endif %}
+</body>
+</html>
